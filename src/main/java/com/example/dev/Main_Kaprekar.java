@@ -35,4 +35,7 @@ public class Main_Kaprekar {
         return digits;
     }
 
+    public static int itKaprekar(int i) {
+        return 0;
+    }
 }
