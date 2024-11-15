@@ -10,22 +10,29 @@ public class Main_Kaprekar {
         * @return retorna el numero obtenido al usar el algoritmo de kaprekar
      */
     public static int kaprekarOp(int number) {
-        int lowest = 0;
-        int highest = 0;
+        int[] digits = Arrays.stream(parseNumberToArray(number)).sorted().toArray();
 
+        int lowest = 1000 * digits[0] + 100 * digits[1] + 10 * digits[2] + digits[3];
+        int highest = 1000 * digits[3] + 100 * digits[2] + 10 * digits[1] + digits[0];
+
+        return highest - lowest;
+    }
+
+    /*
+        * Toma cada digito y lo pasa a un array
+        * @param Numero a parsear a array
+        * @return retornar un array del numero
+     */
+    private static int[] parseNumberToArray(int number){
+        int[] digits = new int[4];
         for (int i = 0; i < 4; i++) {
-            int[] digits = new int[4];
             int temp = number;
             for (int j = 0; j < 4; j++) {
                 digits[j] = temp % 10;
                 temp /= 10;
             }
-            Arrays.sort(digits);
-            lowest = 1000 * digits[0] + 100 * digits[1] + 10 * digits[2] + digits[3];
-            highest = 1000 * digits[3] + 100 * digits[2] + 10 * digits[1] + digits[0];
         }
-
-        return highest - lowest;
+        return digits;
     }
 
 }
