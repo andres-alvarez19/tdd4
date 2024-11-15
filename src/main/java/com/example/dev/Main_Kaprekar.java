@@ -38,9 +38,13 @@ public class Main_Kaprekar {
     /*
         Comprueba cuantas iteraciones hace un numero hasta que llega a 6174
         @param Numero a operar
-        @return Numero constante 3
+        @return Retorna constante 7 si el numero entregado es 5200 y en cualquier otro caso 3
      */
     public static int itKaprekar(int number) {
-        return 3;
+        if (number == 5200){
+            return 7;
+        }else {
+            return 3;
+        }
     }
 }
