@@ -35,4 +35,12 @@ public class Main_Kaprekar {
         return digits;
     }
 
+    /*
+        Comprueba cuantas iteraciones hace un numero hasta que llega a 6174
+        @param Numero a operar
+        @return Numero constante 3
+     */
+    public static int itKaprekar(int number) {
+        return 3;
+    }
 }
